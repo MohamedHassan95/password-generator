@@ -1,0 +1,164 @@
+body {
+  font-family:  sans-serif;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 360px;
+  text-align: center;
+}
+
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.generate-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin: 15px 0;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all ease 0.5s ;
+}
+
+.generate-btn:hover{
+    background: #fff;
+    color: #007bff;
+}
+
+
+.password-box {
+  display: none;
+  gap: 10px;
+  margin-top: 15px;
+  position: relative;
+}
+
+.password-box input {
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background: transparent;
+    flex: 1;
+    padding: 12px;
+}
+
+.password-box button {
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    background: transparent;
+    transition: all ease 0.5s;
+}
+
+.password-box button:hover{
+    background: #fff;
+    color: #333;    
+}
+
+
+
+
+.password{
+  color: #fff;
+  font-size: 15px;
+}
+
+.copy-msg {
+  position: absolute;
+  background: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  top: -35px;
+  right: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-5px);
+}
+
+.error-msg{
+  position: absolute;
+  background: red;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  top: 210px;
+  left: 638px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-5px);
+}
+
+.error-msg.show{
+   opacity: 1;
+  transform: translateY(0);
+}
+
+.copy-msg.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flash {
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .generate-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .password-box {
+    flex-direction: column;
+  }
+
+  .password-box input,
+  .password-box button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .error-msg {
+    left: 50%;
+    transform: translateX(-50%);
+    top: auto;
+    bottom: -20px;
+  }
+}
